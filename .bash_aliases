@@ -5,7 +5,7 @@ alias ks="k get services"
 alias sd="skaffold.exe dev" 
 alias sdl="skaffold.exe delete" 
 
-alias udemy-bot-logs="kubectl logs -l app=udemy-bot --tail=2000 "
+alias udemy-bot-logs="kubectl logs -l app=udemy-bot --tail=2000 -c bot"
 alias protonvpn-logs="kubectl logs -l app=udemy-bot --tail=2000 -c protonvpn "
 alias master-logs="kubectl logs -l app=master --tail=2000"
 alias master-runner-logs="kubectl logs -l app=master-runner --tail=2000"
@@ -25,7 +25,7 @@ alias digital-ocean-first-run="dup -d && digital-ocean-bash"
 
 alias kmasterrunnerbash="kubectl exec -it deploy/master-runner-depl -- bash"
 alias kmasterbash="kubectl exec -it deploy/master-depl -- bash"
-alias kfillerbash="kubectl exec -it job/filler -- bash"
+alias kstatuscheckerbash="kubectl exec -it job/status-checker -- bash"
 
 alias delete-deployments="kubectl delete --all deployments"
 alias delete-containers="docker rm -vf $(docker ps -a -q)"
@@ -75,5 +75,7 @@ function find-largest-files(){
 function all-folder-sizes(){
     du  --max-depth=1 -h
 }
+
+
 
 
